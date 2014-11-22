@@ -1,0 +1,45 @@
+{% load staticfiles %}
+
+
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+
+    <title>Вхід в систему "Лікарня"</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/signin.css' %}" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <form abineguid="7ECB0CD598694162831472AA822A688A" class="form-signin" method="post" role="form" action="{% url 'django.contrib.auth.views.login' %}">
+        <h4 class="form-signin-heading">Будь ласка, увійдіть в систему!</h2>
+        <label for="username" class="sr-only">Ім’я</label>
+        <input id="username" class="form-control" placeholder="Username" required="" autofocus="">
+        <label for="inputPassword" class="sr-only">Пароль</label>
+        <input id="inputPassword" class="form-control" placeholder="Password" required="" type="password">
+        <div class="checkbox">
+          <label>
+            <input value="remember-me" type="checkbox"> Запам’ятати мене
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" value="login">Увійти</button>
+        <input type="hidden" name="next" value="{{ next }}" />
+      </form>
+
+    </div> <!-- /container --> 
+
+</body></html>

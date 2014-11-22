@@ -27,6 +27,15 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+PROJECT_PATH = os.path.dirname(os.path.abspath(__file__))
+CURRENT_DIR = os.path.dirname(__file__)
+
+TEMPLATE_DIRS = (os.path.join(CURRENT_DIR, 'templates'),)
+
+LOGIN_REDIRECT_URL = '/'
+
+LOGIN_URL = 'django.contrib.auth.views.login'
+
 
 # Application definition
 
@@ -50,6 +59,12 @@ MIDDLEWARE_CLASSES = (
     # 'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+)
+
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 
 ROOT_URLCONF = 'hospital.urls'
@@ -83,5 +98,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
+
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 STATIC_URL = '/static/'
