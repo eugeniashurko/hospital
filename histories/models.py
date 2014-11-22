@@ -2,7 +2,7 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 from profiles.models import Doctor
-
+from administration.models import Room
 
 
 class Patient(models.Model):
@@ -20,6 +20,12 @@ class Patient(models.Model):
     def __unicode__(self):
         return self.name
 
+class Record(models.Model):
+    room = models.ForeignKey(Room)
+
+    def __unicode__(self):
+        return (self.name)
+
 
 class MedicalCard(models.Model):
     date_issued = models.DateField(_(u'Date Issued'), blank=True, null=True)
@@ -35,6 +41,7 @@ class MedicalCard(models.Model):
 
 
 class MedicalHistory(models.Model):
+    record = models.ForeignKey(Record, null=True)
     medical_card = models.OneToOneField(MedicalCard);
     preliminary_diagnosis = models.CharField(_(u'Preliminary Diagnosis'), max_length=255)
     start_date = models.DateField(_(u'Start Date'))
@@ -68,3 +75,9 @@ class LaboratoryTest(models.Model):
 
     def __unicode__(self):
         return (self.medical_history.__unicode__() + ' ' + self.name)
+
+
+class Prescription(models.Model):
+    doctor = models.ForeignKey(Doctor)
+    medicine = models.CharField(_(u'Medicine'), max_length=255)
+    medical_history = models.ForeignKey(MedicalHistory)
