@@ -79,5 +79,6 @@ class LaboratoryTest(models.Model):
 
 class Prescription(models.Model):
     doctor = models.ForeignKey(Doctor)
+    date_issued = models.DateField(_(u'Date Issued'))
     medicine = models.CharField(_(u'Medicine'), max_length=255)
     medical_history = models.ForeignKey(MedicalHistory)
