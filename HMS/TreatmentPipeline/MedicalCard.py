@@ -2,4 +2,5 @@ __author__ = 'Саша'
 
 
 
-class MedicalCard
+class MedicalCard:
+    pass
