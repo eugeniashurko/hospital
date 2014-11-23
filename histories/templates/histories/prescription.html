@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <h2 class="sub-header">Виписані рецепти</h2>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Дата надходження</th>
+          <th>Ім’я пацієнта</th>
+          <th>Діагноз</th>
+          <th>Палата</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>                  
+          <td>15/11/2014</td>
+          <td>Величко</td>
+          <td>Застуда</td>
+          <td>121</td>
+        </tr>
+        
+        <tr>
+          <td>01/11/2014</td>
+          <td>Амосов</td>
+          <td>Нудота</td>
+          <td>134</td>
+        </tr>
+       
+        <tr>
+          <td>01/11/2014</td>
+          <td>Вакула</td>
+          <td>Температура</td>
+          <td>122</td>
+        </tr>
+        
+        <tr>
+          <td>29/10/2014</td>
+          <td>Петренко</td>
+          <td>Запаморочення голови</td>
+          <td>125</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock %}

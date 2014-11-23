@@ -7,9 +7,11 @@ from django.contrib.auth import authenticate, login
 
 def index(request):
     if not request.user.is_authenticated():
-        return redirect('/login/?next=%s' % request.path)
+         return redirect('/login/?next=%s' % request.path)
     else:
-        return HttpResponse("Hello, world. You're at the page index. %s" % request.user)
+        template = loader.get_template('profiles/doctor_main.html')
+        context = RequestContext(request) 
+        return HttpResponse(template.render(context))
 
 # def login_view(request):      
 #     template = loader.get_template('login.html')

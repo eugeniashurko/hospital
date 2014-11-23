@@ -25,8 +25,7 @@
   <body>
 
     <div class="container">
-
-      <form abineguid="7ECB0CD598694162831472AA822A688A" class="form-signin" role="form" action="{% url 'django.contrib.auth.views.login' %}">
+      <form abineguid="7ECB0CD598694162831472AA822A688A" class="form-signin" action="{% url 'django.contrib.auth.views.login' %}">
         <h4 class="form-signin-heading">Будь ласка, увійдіть в систему!</h2>
         <label for="username" class="sr-only">Ім’я</label>
         <input id="username" class="form-control" placeholder="Username" required="" autofocus="">
@@ -37,9 +36,9 @@
             <input value="remember-me" type="checkbox"> Запам’ятати мене
           </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Увійти</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" value="login">Увійти</button>
+        <input type="hidden" name="next" value="/" />
       </form>
-
     </div> <!-- /container -->
 
 

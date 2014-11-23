@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <span class="text-muted">Вітаємо Вас в системі "Лікарня"!</span>
+
+  <h1 class="page-header">Василь Василенко <span class="text-muted">(лікар)</span></h1>
+
+  <div class="row placeholders">
+    <div class="col-xs-6 col-sm-3 placeholder">
+      <img data-holder-rendered="true" src='{% static "images/doctor.jpg" %}' data-src='{% static "images/doctor.jpg" %}' class="img-responsive" alt="Patient photo">
+    </div>
+    <div class="col-xs-12 col-sm-6 placeholder">
+      <h4 align="left"><a>Відділення ургентної хірургії</a></h4>
+      <p align="left"><span class="text-muted">Постада: </span>Завідувач відділення</p>
+      <p align="left"><span class="text-muted">Телефон: </span>+38 (095) 111 22 33</p>
+      <p align="left"><span class="text-muted">Поточних пацієнтів: </span> 4</p>
+    </div>
+    <div class="col-xs-6 col-sm-3 placeholder">
+    </div>
+   
+  </div>
+
+  <h2 class="sub-header">Поточні пацієнти</h2>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Дата надходження</th>
+          <th>Ім’я пацієнта</th>
+          <th>Діагноз</th>
+          <th>Палата</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>                  
+          <td>15/11/2014</td>
+          <td>Величко</td>
+          <td>Застуда</td>
+          <td>121</td>
+        </tr>
+        
+        <tr>
+          <td>01/11/2014</td>
+          <td>Амосов</td>
+          <td>Нудота</td>
+          <td>134</td>
+        </tr>
+       
+        <tr>
+          <td>01/11/2014</td>
+          <td>Вакула</td>
+          <td>Температура</td>
+          <td>122</td>
+        </tr>
+        
+        <tr>
+          <td>29/10/2014</td>
+          <td>Петренко</td>
+          <td>Запаморочення голови</td>
+          <td>125</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock %}

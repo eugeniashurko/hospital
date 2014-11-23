@@ -30,11 +30,13 @@ ALLOWED_HOSTS = []
 PROJECT_PATH = os.path.dirname(os.path.abspath(__file__))
 CURRENT_DIR = os.path.dirname(__file__)
 
-TEMPLATE_DIRS = (os.path.join(CURRENT_DIR, 'templates'),)
+TEMPLATE_DIRS = (os.path.join(CURRENT_DIR, 'templates'),
+                 os.path.join(CURRENT_DIR, 'profiles/templates'),
+                 os.path.join(CURRENT_DIR, 'histories/templates'))
 
 LOGIN_REDIRECT_URL = '/'
 
-LOGIN_URL = 'django.contrib.auth.views.login'
+LOGIN_URL = '/login/'
 
 
 # Application definition
