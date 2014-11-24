@@ -25,19 +25,28 @@
   <body>
 
     <div class="container">
-      <form abineguid="7ECB0CD598694162831472AA822A688A" class="form-signin" action="{% url 'django.contrib.auth.views.login' %}">
-        <h4 class="form-signin-heading">Будь ласка, увійдіть в систему!</h2>
+      
+      <form abineguid="7ECB0CD598694162831472AA822A688A" class="form-signin" action="{% url 'login_user' %}" method="POST">
+        {% csrf_token %}
+        {% if next %}
+            <input type="hidden" name="next" value="{{ next }}" />
+        {% endif %}
+        {% if state == "" %}
+            <h4 class="form-signin-heading">Будь ласка, увійдіть в систему!</h4>
+        {% else %}
+            <h4 class="form-signin-heading"><font color="red">{{ state }}</font></h4>
+        {% endif %}
         <label for="username" class="sr-only">Ім’я</label>
-        <input id="username" class="form-control" placeholder="Username" required="" autofocus="">
+        <input id="username" name="username" class="form-control" placeholder="Username" required="" autofocus="">
         <label for="inputPassword" class="sr-only">Пароль</label>
-        <input id="inputPassword" class="form-control" placeholder="Password" required="" type="password">
+        <input id="password" name="password" class="form-control" placeholder="Password" required="" type="password">
         <div class="checkbox">
           <label>
             <input value="remember-me" type="checkbox"> Запам’ятати мене
           </label>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit" value="login">Увійти</button>
-        <input type="hidden" name="next" value="/" />
+        <!-- <input type="hidden" name="next" value="/" /> -->
       </form>
     </div> <!-- /container -->
 

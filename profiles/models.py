@@ -5,11 +5,7 @@ from django.contrib.auth.models import User
 from administration.models import Department
 
 
-class UserProfile(models.Model):
-    ROLE_CHOICES = (
-        ('D', _('Doctor')),
-        ('N', _('Nurse')),
-    )    
+class UserProfile(models.Model):   
     user = models.OneToOneField(User)
 
     name = models.CharField(_(u'Name'), max_length=255)
@@ -19,6 +15,7 @@ class UserProfile(models.Model):
     
     class Meta:
         abstract = True
+
 
 class Doctor(UserProfile):
 

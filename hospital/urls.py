@@ -6,8 +6,8 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', 'hospital.views.index', name='index'),
-    url(r'^login/', 'django.contrib.auth.views.login', name="login"),
-    url(r'^logout/', 'django.contrib.auth.views.logout'),
+    url(r'^login/', 'hospital.views.login_user', name="login_user"),
+    url(r'^logout/', 'django.contrib.auth.views.logout', {'next_page': '/login'}, name="logout"),
     url(r'^history/', include('histories.urls')),
     url(r'^calendar/', 'hospital.views.calendar', name="calendar"),
     url(r'^profiles/', include('profiles.urls')),

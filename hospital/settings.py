@@ -50,8 +50,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'profiles',
     'histories',
-    'administration',
-    'schedule'
+    'administration'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -109,5 +108,3 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-
-STATIC_URL = '/static/'
