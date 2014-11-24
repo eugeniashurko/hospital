@@ -8,4 +8,5 @@ class Controller:
         self.priority = None
 
     def processEvent(self, event):
-        pass
+        status = None
+        return status

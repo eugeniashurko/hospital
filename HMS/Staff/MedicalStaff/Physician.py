@@ -1,7 +1,8 @@
 __author__ = 'Саша'
 
-import HMS.HMS.Staff.MedicalStaff as MedicalStaff
+import HMS.HMS.Staff.MedicalStaff as MedicalStaffMember
 
-class Physician(MedicalStaff):
 
+class Physician(MedicalStaffMember):
     def __init__(self):
+        pass

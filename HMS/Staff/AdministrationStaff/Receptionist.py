@@ -1,9 +1,9 @@
 __author__ = 'Саша'
 
 
-import HMS.HMS.Staff.Person as Staff
+import HMS.HMS.Staff as AdministrationStaffMember
 
-class Receptionist(Staff.Person):
+class Receptionist(AdministrationStaffMember):
 
     def __init__(self):
         self.frontDeskId = None

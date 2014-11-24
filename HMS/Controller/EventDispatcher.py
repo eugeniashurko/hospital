@@ -1,5 +1,6 @@
 __author__ = 'Саша'
 
+import HMS.HMS.Controller as Controller
 
 class EventDispatcher:
 
@@ -12,3 +13,12 @@ class EventDispatcher:
 
     def removeController(self, controller):
         pass
+
+
+    def processEvent(self, event):
+        flag = False
+        for c in self.controllerContainer:
+            if (c.processEvent(event)):
+                flag = True
+                break
+        return flag
