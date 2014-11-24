@@ -18,6 +18,11 @@ def index(request):
 #     context = RequestContext(request)
 #     return HttpResponse(template.render(context))
 
+def calendar(request):
+    template = loader.get_template('calendar.html')
+    context = RequestContext(request) 
+    return HttpResponse(template.render(context)) 
+
 
 def logout_view(request):
     if not request.user.is_authenticated():
